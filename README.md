@@ -11,6 +11,3 @@ argument to the script.
 
 the output json is left in the same directory with the same name but with 
 an extension of .json
-
-if the output file exists the script exits with an error message.
-
