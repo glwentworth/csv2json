@@ -38,17 +38,26 @@ outs.on('finish', () => {
     console.log('out stream file complete')
 })
 
+let firstobj = 0;
 csv({flatKeys:true})
 .fromFile(fileroot)
 .on('json', (jsonobj, csvrow) => {
     //console.log('csv row: ', csvrow, 'json item to write: ', jsonobj)
     //console.log('json obj string: '+JSON.stringify(jsonobj))
+    if (!firstobj) {
+        
+        console.log("first csv item");
+
+        firstobj = 1;
+        outs.write("[\n");
+    }
     outs.write(JSON.stringify(jsonobj)+'\n')
 })
 .on('error', (err) => {
     console.log('csv conversion error: ',err)
 })
 .on('done', (err) => {
+    outs.write("]\n")
     console.log('CSV conversion to JSON complete')
 })
 
