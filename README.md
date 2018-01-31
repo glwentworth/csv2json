@@ -11,3 +11,7 @@ argument to the script.
 
 the output json is left in the same directory with the same name but with 
 an extension of .json
+
+the directory data has the test data file with two names one with an extension the 
+other without
+
