@@ -7,13 +7,15 @@
  *   2- the output file is created alongside the 
  *      input file.   
  *   3- does not generate nested json 
- *   4- output is as a json array of 'csv' objects
+ *   4- output is as a json array of objects converted from each csv line
+ *      to a json object
  * 
- * 2018 jan. 29
  * built in vscode on windows 10
  * 
  * Copyright 2018 G. L. Wentworth
- */
+ * 2018 jan. 31
+ * 
+ * */
 
 const fs = require('fs')
 const path = require('path')
@@ -40,12 +42,12 @@ outs.on('finish', () => {
 })
 
 /* track if first line to be output so leading '[' array opening 
-  can be written
+   can be written
 */
 let firstobj = 0;
 /* keep one line back as csv is converted, so we can add needed commas 
-  between objects created from each csv line. this isn't done on the last 
-  object
+   between objects created from each csv line. this isn't done on the last 
+   object
 */
 let previous = "";
 
