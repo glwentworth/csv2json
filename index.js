@@ -45,9 +45,7 @@ csv({flatKeys:true})
     //console.log('csv row: ', csvrow, 'json item to write: ', jsonobj)
     //console.log('json obj string: '+JSON.stringify(jsonobj))
     if (!firstobj) {
-        
-        console.log("first csv item");
-
+        //console.log("first csv item");
         firstobj = 1;
         outs.write("[\n");
     }
